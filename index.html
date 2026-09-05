@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dossier.css">
 </head>
 <body>
   <header class="topbar">
@@ -20,6 +21,7 @@
     <nav aria-label="Navegação principal">
       <a href="#sistema">Sistema</a>
       <a href="#equipamentos">Equipamentos</a>
+      <a href="#dossie-reles">Dossiê dos relés</a>
       <a href="#bases">Bases</a>
       <a href="#circuito-via">Circuito de via</a>
       <a href="#fontes">Fontes</a>
@@ -47,6 +49,84 @@
         <div class="flow-line"></div>
         <div class="flow-node"><span>04</span><div><b>Supervisão</b><small>CCO e sistemas digitais</small></div></div>
       </div>
+    </section>
+
+    <section class="section relay-dossier" id="dossie-reles">
+      <div class="section-intro split">
+        <div><p class="eyebrow">DOSSIÊ TÉCNICO • PRIMEIRA EDIÇÃO</p><h2>Relés: da etiqueta ao circuito</h2></div>
+        <p>Um relé ferroviário não é identificado apenas pela aparência. Família, número de peça, grupo, resistência das bobinas, contatos e base determinam o que ele pode fazer e onde pode ser aplicado.</p>
+      </div>
+
+      <div class="relay-anatomy">
+        <div class="relay-sketch" role="img" aria-label="Croqui original e simplificado da anatomia de um relé vital plug-in">
+          <div class="relay-case">
+            <span class="label-plate">MODELO<br><b>P/N + GR</b></span>
+            <span class="coil"></span>
+            <span class="armature"></span>
+            <span class="contact c1"></span><span class="contact c2"></span><span class="contact c3"></span>
+          </div>
+          <div class="plugboard"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="callouts">
+          <article><span>01</span><div><b>Placa de identificação</b><p>É a chave da pesquisa: modelo, part number, grupo, bobina e configuração.</p></div></article>
+          <article><span>02</span><div><b>Conjunto magnético</b><p>Bobina, núcleo e armadura — ou vane, conforme a família — transformam grandeza elétrica em movimento controlado.</p></div></article>
+          <article><span>03</span><div><b>Contatos</b><p>Front, back e combinações especiais entregam o estado do relé à lógica vital.</p></div></article>
+          <article><span>04</span><div><b>Base e registro</b><p>A fiação permanece na base. A codificação mecânica reduz o risco de inserir uma variante incompatível.</p></div></article>
+        </div>
+      </div>
+      <p class="technical-caveat">Croqui didático original — não representa dimensões, quantidade de contatos nem pinagem de um modelo específico.</p>
+
+      <div class="relay-families">
+        <article class="family-sheet">
+          <header><div><small>GRS / ALSTOM • TYPE B</small><h3>B1N e B1PO</h3></div><span class="evidence contextual">Contextual</span></header>
+          <p class="function"><b>Função-base:</b> repetir condições elétricas na lógica por meio de contatos mecanicamente comandados.</p>
+          <dl><div><dt>B1N</dt><dd>Relé neutro: a atuação depende da energização, sem usar a polaridade como informação funcional.</dd></div><div><dt>B1PO</dt><dd>Configuração polarizada; a interpretação depende do arranjo exato de bobinas e contatos.</dd></div><div><dt>No inventário</dt><dd>B1N 56001-734 GR1 e B1PO 100/100 Ω.</dd></div></dl>
+          <p class="warning"><b>Atenção histórica:</b> a FRA publicou alerta para certos B1 fabricados entre 1960 e 1985 devido à possibilidade de permanecerem indevidamente energizados. O ano e a variante importam.</p>
+          <a href="https://railroads.dot.gov/regulations/federal-register-documents/00-11866" target="_blank" rel="noopener">Abrir alerta oficial da FRA ↗</a>
+        </article>
+
+        <article class="family-sheet">
+          <header><div><small>GRS / ALSTOM • TYPE B</small><h3>B2V</h3></div><span class="evidence confirmed">Confirmado</span></header>
+          <p class="function"><b>Função-base:</b> relé de circuito de via em família do tipo vane, usado como receptor da condição elétrica dos trilhos.</p>
+          <dl><div><dt>Princípio</dt><dd>A resposta eletromecânica depende das grandezas de alimentação e do conjunto interno correspondente à variante.</dd></div><div><dt>No sistema</dt><dd>Seus contatos apresentam à lógica a condição comprovada pelo circuito de via.</dd></div><div><dt>No inventário</dt><dd>56005-100 GR12. A folha de engenharia é necessária para valores de operação e ligação.</dd></div></dl>
+          <p class="micro-note">“B2V” identifica uma família; não autoriza aplicar dados de uma variante a outra.</p>
+          <a href="https://www.mta.info/document/213236" target="_blank" rel="noopener">Ver rastreio de peças na MTA ↗</a>
+        </article>
+
+        <article class="family-sheet">
+          <header><div><small>GRS / ALSTOM • TYPE B</small><h3>B2TE, B2CT e A62-451</h3></div><span class="evidence contextual">Contextual</span></header>
+          <p class="function"><b>Função-base:</b> introduzir tempo ou comportamento periódico controlado em circuitos a relés.</p>
+          <dl><div><dt>B2TE</dt><dd>Temporização. O inventário registra faixas de 4–64 s e 1–8 min.</dd></div><div><dt>B2CT</dt><dd>Associado a taxas de código; aparecem variantes de 75 e 180 rate.</dd></div><div><dt>A62-451</dt><dd>Conjunto temporizado Type B2, referência 57263-855 GR2.</dd></div></dl>
+          <p class="micro-note">A faixa impressa não basta para reconstruir a função: o esquema mostra como o tempo participa da lógica.</p>
+        </article>
+
+        <article class="family-sheet">
+          <header><div><small>US&amp;S / ANSALDO STS • PN</small><h3>PN-150 e derivados</h3></div><span class="evidence contextual">Contextual</span></header>
+          <p class="function"><b>Função-base:</b> família de relés vitais plug-in com versões neutras, biased e para diferentes cargas de contato.</p>
+          <dl><div><dt>PN-150B</dt><dd>Versão biased; a polaridade e os valores de bobina fazem parte da definição funcional.</dd></div><div><dt>PN-150N / HD</dt><dd>Variantes neutra e para contatos/cargas específicas, conforme a folha de engenharia.</dd></div><div><dt>Outros no inventário</dt><dd>PN-156, PN-258BSR e PN-259BSR — ainda aguardando vinculação documental individual.</dd></div></dl>
+          <a href="https://www.yumpu.com/en/document/view/40717146/rse-4g2-ansaldo-sts" target="_blank" rel="noopener">Abrir ficha Ansaldo RSE-4G2 ↗</a>
+        </article>
+      </div>
+
+      <div class="identity-rule">
+        <div><p class="eyebrow">REGRA DE IDENTIFICAÇÃO</p><h3>Leia nesta ordem</h3></div>
+        <ol><li><b>Fabricante e família</b><span>GRS/Alstom Type B ou US&amp;S/Ansaldo PN</span></li><li><b>Modelo completo</b><span>B1N, B2V, PN-150B…</span></li><li><b>Part number e grupo</b><span>separam construções e revisões</span></li><li><b>Bobina e contatos</b><span>Ω, tensão, F/B e material</span></li><li><b>Base e esquema</b><span>confirmam interface e função real</span></li></ol>
+      </div>
+    </section>
+
+    <section class="section local-history" id="historia-local">
+      <div class="section-intro"><p class="eyebrow">JUNDIAÍ ↔ CAMPO LIMPO PAULISTA</p><h2>História local: evidência antes da conclusão</h2><p>O trecho pertence à linhagem histórica São Paulo Railway → EFSJ → RFFSA → operação metropolitana. Essa continuidade ajuda a explicar a convivência de gerações tecnológicas, mas não prova, sozinha, quando cada relé foi instalado.</p></div>
+      <div class="evidence-ladder">
+        <article class="level-a"><span>A</span><div><h3>Comprovado no trecho</h3><p>Foto com localização reconhecível, desenho de sinalização, relação de aparelhos, folha de teste ou cadastro com estação/quilometragem.</p></div></article>
+        <article class="level-b"><span>B</span><div><h3>Comprovado no remanejamento</h3><p>Modelo presente no inventário atual, porém ainda sem reconstrução de sua origem ou primeira instalação.</p></div></article>
+        <article class="level-c"><span>C</span><div><h3>Compatível com o contexto</h3><p>Família usada em sinalização ferroviária da época, mas sem vínculo documental confirmado com este trecho.</p></div></article>
+      </div>
+      <div class="local-grid">
+        <article><small>O QUE JÁ PODEMOS AFIRMAR</small><h3>O recorte técnico existe</h3><p>Os números de peça registrados no inventário tornam legítimo estudar essas famílias como equipamentos necessários para compreender o sistema encontrado no remanejamento.</p></article>
+        <article><small>O QUE AINDA NÃO PODEMOS AFIRMAR</small><h3>A data e o ponto de instalação</h3><p>Sem desenho, etiqueta fotografada ou registro localizado, não se deve dizer que determinado B1, B2 ou PN estava em uma cabine específica desde a fase EFSJ ou RFFSA.</p></article>
+        <article><small>PISTAS PRIORITÁRIAS</small><h3>Onde procurar</h3><p>Casas de relés, caixas de locação, diagramas de circuito, plantas de cabos, livros de teste, cadastros de ativos e acervos ferroviários de Jundiaí.</p></article>
+      </div>
+      <div class="history-links"><a href="https://aeefsj.org.br/site/historia-ferrovia/" target="_blank" rel="noopener">História da EFSJ — AEEFSJ ↗</a><a href="https://www.estacoesferroviarias.com.br/j/jundiai.htm" target="_blank" rel="noopener">Estação de Jundiaí — acervo histórico ↗</a></div>
     </section>
 
     <section class="section dark" id="sistema">
@@ -139,6 +219,8 @@
         <article><span>ESCOPO E NORMAS</span><h3>Termo de Referência SNO1</h3><p>Usado para compreender sistemas, interfaces, documentação, ensaios e referências normativas do remanejamento.</p></article>
         <article><span>FABRICANTE</span><h3>Siemens — Vital Relays</h3><p>Referência atual sobre construção e aplicação de relés vitais ferroviários plug-in.</p><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:0c9ccf2d-65bb-4db9-928e-1c934d741552/relay-products-product-brochure-en.pdf" target="_blank" rel="noopener">Abrir documento ↗</a></article>
         <article><span>OPERADOR PÚBLICO</span><h3>MTA — Qualified Products List</h3><p>Confirma nomenclaturas e números de peças legadas Alstom/GRS, incluindo a família B2V.</p><a href="https://www.mta.info/document/213236" target="_blank" rel="noopener">Abrir documento ↗</a></article>
+        <article><span>SEGURANÇA FERROVIÁRIA</span><h3>FRA — Safety Advisory 2000-01</h3><p>Registro oficial sobre relés GRS B1 fabricados entre 1960 e 1985 e sua importância para inspeção e manutenção.</p><a href="https://railroads.dot.gov/regulations/federal-register-documents/00-11866" target="_blank" rel="noopener">Abrir documento ↗</a></article>
+        <article><span>FABRICANTE</span><h3>Ansaldo STS — RSE-4G2</h3><p>Ficha da família PN-150BH, útil para compreender construção, contatos e base plug-in da linhagem US&amp;S.</p><a href="https://www.yumpu.com/en/document/view/40717146/rse-4g2-ansaldo-sts" target="_blank" rel="noopener">Abrir documento ↗</a></article>
         <article><span>FABRICANTE</span><h3>Siemens — Track Circuit</h3><p>Exemplo documentado de circuito de via e critérios de detecção por shunt.</p><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:d788152b-9ec5-494a-9d3e-0a55a725c2d7/se-3-83-3-hz-track-circuit.pdf" target="_blank" rel="noopener">Abrir documento ↗</a></article>
         <article class="legend"><span>NÍVEL DE EVIDÊNCIA</span><p><b class="verified">Confirmado</b> manual ou catálogo correspondente.</p><p><b class="context">Contextual</b> função geral da família.</p><p><b class="pending">A verificar</b> identificação ainda sem manual específico.</p></article>
       </div>
