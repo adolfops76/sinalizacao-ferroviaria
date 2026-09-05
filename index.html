@@ -1,28 +1,151 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Acervo de Sinalização Ferroviária</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Acervo técnico e visual sobre equipamentos e sistemas de sinalização ferroviária.">
+  <title>Sinalização Ferroviária — Acervo Técnico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app">Carregando documentação...</div>
-  <script>
-    window.$docsify = {
-      name: "Sinalização Ferroviária",
-      loadSidebar: true,
-      subMaxLevel: 2,
-      auto2top: true,
-      search: { placeholder: "Pesquisar...", noData: "Nenhum resultado." },
-      copyCode: { buttonText: "Copiar", errorText: "Erro", successText: "Copiado!" },
-      pagination: { previousText: "Página Anterior", nextText: "Próxima Página", crossChapter: true }
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <span class="signal-mark"><i></i><i></i><i></i></span>
+      <span><b>SINALIZAÇÃO</b><small>ACERVO TÉCNICO</small></span>
+    </a>
+    <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+    <nav aria-label="Navegação principal">
+      <a href="#sistema">Sistema</a>
+      <a href="#equipamentos">Equipamentos</a>
+      <a href="#bases">Bases</a>
+      <a href="#circuito-via">Circuito de via</a>
+      <a href="#fontes">Fontes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">FERROVIA • SEGURANÇA • CONTROLE</p>
+        <h1>Entender a peça.<br><span>Enxergar o sistema.</span></h1>
+        <p class="lead">Guia técnico e visual dos equipamentos que formam a sinalização ferroviária — do relé eletromecânico às interfaces com sistemas digitais.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#equipamentos">Explorar equipamentos</a>
+          <a class="secondary" href="#sistema">Ver arquitetura</a>
+        </div>
+      </div>
+      <div class="system-panel" aria-label="Fluxo funcional simplificado">
+        <div class="panel-head"><span>CADEIA FUNCIONAL</span><b>VISÃO SIMPLIFICADA</b></div>
+        <div class="flow-node active"><span>01</span><div><b>Detecção</b><small>circuito de via</small></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-node"><span>02</span><div><b>Lógica vital</b><small>relés e intertravamento</small></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-node"><span>03</span><div><b>Comando</b><small>sinal e máquina de chave</small></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-node"><span>04</span><div><b>Supervisão</b><small>CCO e sistemas digitais</small></div></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="sistema">
+      <div class="section-intro">
+        <p class="eyebrow">COMO LER O CONJUNTO</p>
+        <h2>Uma arquitetura construída em camadas</h2>
+        <p>Na ferrovia real, gerações tecnológicas diferentes convivem. Equipamentos eletromecânicos podem executar funções vitais de campo e, ao mesmo tempo, trocar estados com intertravamentos eletrônicos, telecomunicações e supervisão.</p>
+      </div>
+      <div class="layers">
+        <article><span>04</span><div><h3>Operação e supervisão</h3><p>CCO, SCADA, registro de eventos e interfaces operacionais.</p></div><em>CAMADA DIGITAL</em></article>
+        <article><span>03</span><div><h3>Intertravamento</h3><p>Lógica de rotas, bloqueios, comprovações e condições de segurança.</p></div><em>DECISÃO VITAL</em></article>
+        <article><span>02</span><div><h3>Interfaces</h3><p>Relés, bornes, cabos, fontes e isolamento entre sistemas.</p></div><em>CONEXÃO</em></article>
+        <article><span>01</span><div><h3>Campo</h3><p>Trilhos, sinais, AMVs, máquinas de chave e caixas de locação.</p></div><em>PROCESSO FÍSICO</em></article>
+      </div>
+      <aside class="note"><b>Arquitetura híbrida</b><p>Não existe uma configuração única para toda a CPTM. A composição varia por linha, trecho, época de implantação e ciclos de modernização. Aqui o foco é explicar os conceitos e as interfaces possíveis, não atribuir uma arquitetura uniforme à rede.</p></aside>
+    </section>
+
+    <section class="section" id="equipamentos">
+      <div class="section-intro split">
+        <div><p class="eyebrow">JANELA INICIAL DO ACERVO</p><h2>Equipamentos encontrados no contexto do remanejamento</h2></div>
+        <p>O inventário orienta quais temas estudar. Quantidade, aquisição e andamento da migração não fazem parte deste acervo.</p>
+      </div>
+      <div class="catalog-tools">
+        <label><span>Pesquisar</span><input id="search" type="search" placeholder="Ex.: B2TE, retificador, base…"></label>
+        <div class="filters" aria-label="Filtrar categorias">
+          <button class="selected" data-filter="todos">Todos</button>
+          <button data-filter="reles">Relés</button>
+          <button data-filter="via">Circuito de via</button>
+          <button data-filter="energia">Energia e proteção</button>
+          <button data-filter="interface">Interfaces</button>
+        </div>
+      </div>
+      <div class="equipment-grid" id="equipment-grid"></div>
+      <p class="empty" hidden>Nenhum equipamento encontrado para esse filtro.</p>
+    </section>
+
+    <section class="section blueprint" id="bases">
+      <div class="section-intro"><p class="eyebrow">UM TERMO, TRÊS OBJETOS</p><h2>O que significa “base”?</h2><p>O contexto define o objeto. Distinguir essas três bases evita confundir fundação civil, interface eletromecânica e suporte de componentes.</p></div>
+      <div class="base-grid">
+        <article>
+          <div class="base-visual relay-base"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <small>BASE 01</small><h3>Base de relé</h3><p>Soquete fixado no rack. Recebe o relé, conduz cada contato e bobina até a fiação e preserva a correspondência entre modelo e circuito.</p>
+          <ul><li>GRS B1 e B2</li><li>US&S simples e dupla</li><li>contatos e codificação</li></ul>
+        </article>
+        <article>
+          <div class="base-visual terminal-base"><i></i><i></i><i></i><i></i></div>
+          <small>BASE 02</small><h3>Base terminal</h3><p>Suporte isolante para resistores, terminais ou pontos de ligação. Organiza conexões e permite inspeção e manutenção.</p>
+          <ul><li>cerâmica isolante</li><li>borneiras e terminais</li><li>resistores de ajuste</li></ul>
+        </article>
+        <article>
+          <div class="base-visual concrete-base"><i></i></div>
+          <small>BASE 03</small><h3>Base de concreto</h3><p>Fundação civil que ancora o armário, estabelece cota, estabilidade e interface com eletrodutos e aterramento.</p>
+          <ul><li>armário simples</li><li>armário duplo</li><li>entrada de dutos</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="circuito-via">
+      <div class="section-intro"><p class="eyebrow">DETECÇÃO DE OCUPAÇÃO</p><h2>Circuito de via: o conjunto funcional</h2><p>O relé não trabalha sozinho. Fonte, condicionamento elétrico, trilhos e receptor formam uma cadeia em que a presença do trem altera a energia disponível no relé de via.</p></div>
+      <div class="track-diagram">
+        <div class="track-card source"><span>01</span><b>Alimentação</b><small>transformador / retificador</small></div>
+        <div class="arrow">→</div>
+        <div class="track-card adjust"><span>02</span><b>Ajuste</b><small>resistor / reator / impedância</small></div>
+        <div class="arrow">→</div>
+        <div class="track-card rail"><span>03</span><b>Trilhos</b><small>meio de transmissão e detecção</small></div>
+        <div class="arrow">→</div>
+        <div class="track-card relay"><span>04</span><b>Relé de via</b><small>estado livre / ocupado</small></div>
+      </div>
+      <div class="states">
+        <article><span class="lamp green"></span><div><b>Via livre</b><p>Com energia adequada no receptor, o relé assume o estado previsto pelo projeto e disponibiliza seus contatos à lógica.</p></div></article>
+        <article><span class="lamp red"></span><div><b>Via ocupada ou condição degradada</b><p>O shunt dos rodeiros — ou uma falha que reduza a energia — leva o sistema ao estado mais restritivo previsto.</p></div></article>
+      </div>
+      <p class="technical-caveat">Diagrama conceitual. Tensões, frequências, limites de shunt e critérios de ajuste dependem do projeto, do tipo de circuito e do manual específico.</p>
+    </section>
+
+    <section class="section dark" id="evolucao">
+      <div class="section-intro"><p class="eyebrow">PRÓXIMAS CAMADAS DO ACERVO</p><h2>Do relé ao controle baseado em comunicação</h2></div>
+      <div class="roadmap">
+        <article class="current"><small>AGORA</small><h3>Eletromecânica vital</h3><p>Relés, bases, circuitos de via, alimentação e interfaces.</p></article>
+        <article><small>EXPANSÃO</small><h3>Intertravamento</h3><p>Lógica a relés, CBI e transição entre tecnologias.</p></article>
+        <article><small>EXPANSÃO</small><h3>Telecom e supervisão</h3><p>IMUX, redes, fibra, CCO e SCADA.</p></article>
+        <article><small>EXPANSÃO</small><h3>Controle moderno</h3><p>ATP, ATO, CBTC e comunicação trem–via.</p></article>
+      </div>
+    </section>
+
+    <section class="section sources" id="fontes">
+      <div class="section-intro"><p class="eyebrow">RASTREABILIDADE</p><h2>Fontes e critérios</h2><p>O acervo combina documentos do projeto com documentação pública de fabricantes e operadores. Características específicas só serão tratadas como confirmadas quando houver correspondência de modelo, número de peça ou desenho.</p></div>
+      <div class="source-grid">
+        <article><span>FONTE DO RECORTE</span><h3>Inventário MRS</h3><p>“01 - MRS - Atualização - Adolfo - Peças das caixas de sinalização do Remanejamento 1.xlsx”. Usado para identificar famílias de equipamentos.</p></article>
+        <article><span>ESCOPO E NORMAS</span><h3>Termo de Referência SNO1</h3><p>Usado para compreender sistemas, interfaces, documentação, ensaios e referências normativas do remanejamento.</p></article>
+        <article><span>FABRICANTE</span><h3>Siemens — Vital Relays</h3><p>Referência atual sobre construção e aplicação de relés vitais ferroviários plug-in.</p><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:0c9ccf2d-65bb-4db9-928e-1c934d741552/relay-products-product-brochure-en.pdf" target="_blank" rel="noopener">Abrir documento ↗</a></article>
+        <article><span>OPERADOR PÚBLICO</span><h3>MTA — Qualified Products List</h3><p>Confirma nomenclaturas e números de peças legadas Alstom/GRS, incluindo a família B2V.</p><a href="https://www.mta.info/document/213236" target="_blank" rel="noopener">Abrir documento ↗</a></article>
+        <article><span>FABRICANTE</span><h3>Siemens — Track Circuit</h3><p>Exemplo documentado de circuito de via e critérios de detecção por shunt.</p><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:d788152b-9ec5-494a-9d3e-0a55a725c2d7/se-3-83-3-hz-track-circuit.pdf" target="_blank" rel="noopener">Abrir documento ↗</a></article>
+        <article class="legend"><span>NÍVEL DE EVIDÊNCIA</span><p><b class="verified">Confirmado</b> manual ou catálogo correspondente.</p><p><b class="context">Contextual</b> função geral da família.</p><p><b class="pending">A verificar</b> identificação ainda sem manual específico.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div><b>SINALIZAÇÃO FERROVIÁRIA</b><p>Acervo técnico em construção contínua.</p></div><a href="#inicio">Voltar ao início ↑</a></footer>
+  <script src="app.js"></script>
 </body>
 </html>
